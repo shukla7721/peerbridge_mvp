@@ -1,9 +1,9 @@
 const leaderboardData = [
-  { rank: 1, name: "Alex Johnson", score: 156, badge: "Community Hero" },
-  { rank: 2, name: "Sarah Chen", score: 142, badge: "Knowledge Guru" },
-  { rank: 3, name: "Mike Rodriguez", score: 138, badge: "Rising Star" },
-  { rank: 4, name: "Emma Wilson", score: 124, badge: "Helper" },
-  { rank: 5, name: "David Park", score: 119, badge: "Contributor" }
+  { rank: 1, name: "A", score: 156, badge: "Community Hero" },
+  { rank: 2, name: "B", score: 142, badge: "Knowledge Guru" },
+  { rank: 3, name: "C", score: 138, badge: "Rising Star" },
+  { rank: 4, name: "D", score: 124, badge: "Helper" },
+  { rank: 5, name: "E", score: 119, badge: "Contributor" }
 ];
 
 const improveTips = [
@@ -26,4 +26,5 @@ improveTips.forEach(tip => {
   li.innerHTML = `<strong>${tip.title}</strong><br>${tip.description}<br>Points: ${tip.points}` +
     (tip.completed ? " ✅" : tip.progress ? ` - ${tip.progress}%` : "");
   tipsList.appendChild(li);
+
 });
