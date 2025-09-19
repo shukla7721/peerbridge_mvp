@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PeerBridge Login</title>
+  <style>body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #e0f2ff, #f3e8ff);
+}
+
+.login-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+.login-left {
+  flex: 1;
+  background-color: #f0f4f8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.login-left img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.caption {
+  text-align: center;
+  max-width: 400px;
+}
+
+.caption h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.caption p {
+  font-size: 1rem;
+  color: #475569;
+}
+
+.login-right {
+  flex: 1;
+  background: white;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.login-right h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #1e293b;
+}
+
+form {
+  width: 100%;
+  max-width: 400px;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  background: #f1f5f9;
+  border-radius: 8px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.input-group .icon {
+  margin-right: 0.5rem;
+}
+
+input[type="email"] {
+  border: none;
+  background: transparent;
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+button {
+  width: 100%;
+  padding: 0.75rem;
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+button:hover {
+  background: #1e40af;
+}
+
+.disclaimer,
+.note {
+  font-size: 0.85rem;
+  color: #64748b;
+  text-align: center;
+}
+
+.disclaimer a {
+  color: #1e3a8a;
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+  <div class="login-wrapper">
+    <!-- Left Side: Image & Caption -->
+    <div class="login-left">
+      <img src="C:\Users\amar_shukla\Desktop\PeerBridge\student.png" alt="Student using laptop" />
+      <div class="caption">
+        <h2>Connect with your peers</h2>
+        <p>Join PeerBridge to collaborate, learn, and grow together with your university community.</p>
+      </div>
+    </div>
+
+    <!-- Right Side: Login Form -->
+    <div class="login-right">
+      <img src="C:\Users\amar_shukla\Desktop\PeerBridge\Logo.png" alt="PeerBridge Logo" class="logo" />
+      <h2>Connect with your university community</h2>
+      <form id="loginForm">
+        <label for="email">University Email</label>
+        <div class="input-group">
+          <input type="email" id="email" placeholder="example@lpu.in" required />
+        </div>
+        <button type="submit">Continue →</button>
+        <p class="disclaimer">
+          By continuing, you agree to our <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a>.
+        </p>
+        <p class="note">New to PeerBridge? You'll set up your profile after verification.</p>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
