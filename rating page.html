@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PeerBridge Feedback</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+  body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.rating-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #3498db;
+  color: white;
+  font-size: 1rem;
+}
+
+button.outline {
+  background: white;
+  color: #3498db;
+  border: 2px solid #3498db;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+}
+
+.warning {
+  color: red;
+  font-size: 0.9rem;
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.check-icon {
+  font-size: 2rem;
+  background: #d4edda;
+  color: #28a745;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.credit-box {
+  background: #eafaf1;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+  <div class="container" id="feedback-form">
+    <div class="card">
+      <h2>Rate Your Session</h2>
+      <p class="subtitle">Help us improve your experience</p>
+
+      <div class="rating-buttons">
+        <button onclick="setRating('helpful')" id="btn-helpful">👍 Yes</button>
+        <button onclick="setRating('not-helpful')" id="btn-not-helpful">👎 No</button>
+      </div>
+
+      <label for="feedback">Additional feedback (optional)</label>
+      <textarea id="feedback" rows="4" placeholder="Share your thoughts about the session..."></textarea>
+
+      <button onclick="submitFeedback()" id="submit-btn">Submit Rating</button>
+      <p id="warning" class="warning">Please select a rating to continue</p>
+    </div>
+  </div>
+
+  <div class="container hidden" id="thank-you">
+    <div class="card">
+      <div class="check-icon">✔️</div>
+      <h2>Thank You!</h2>
+      <p>Your feedback has been submitted successfully.</p>
+      <div class="credit-box">✨ +10 credits have been added to your account</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
