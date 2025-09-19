@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mentors Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #f8fafc, #e0f2fe);
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #1e3a8a;
+    }
+
+    .mentors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .mentor-card {
+      background: white;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .mentor-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .mentor-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 0.5rem;
+    }
+
+    .mentor-name {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 0.5rem 0;
+    }
+
+    .mentor-rating {
+      color: #f59e0b;
+      margin-bottom: 0.5rem;
+    }
+
+    .mentor-subjects {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .subject-tag {
+      background-color: #dbeafe;
+      padding: 0.3rem 0.6rem;
+      border-radius: 5px;
+      font-size: 0.85rem;
+    }
+
+    .request-btn {
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .request-btn:hover {
+      background-color: #2563eb;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Meet Our Mentors</h1>
+
+  <div class="mentors-grid" id="mentorsGrid"></div>
+
+  <script>
+    const mentors = [
+      {
+        name: "Sarah Chen",
+        avatar: "https://images.unsplash.com/photo-1698356253803-838dceb68946?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+        rating: 4.9,
+        subjects: ["Calculus", "Physics", "Chemistry", "Linear Algebra"]
+      },
+      {
+        name: "Ravi Mehta",
+        avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+        rating: 4.7,
+        subjects: ["Biology", "Organic Chemistry", "Genetics"]
+      },
+      {
+        name: "Aisha Khan",
+        avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+        rating: 5.0,
+        subjects: ["English Literature", "Creative Writing", "History"]
+      },
+      {
+        name: "Daniel Lee",
+        avatar: "https://randomuser.me/api/portraits/men/65.jpg",
+        rating: 4.8,
+        subjects: ["Computer Science", "Algorithms", "Data Structures"]
+      }
+    ];
+
+    const mentorsGrid = document.getElementById('mentorsGrid');
+
+    mentors.forEach(mentor => {
+      const card = document.createElement('div');
+      card.className = 'mentor-card';
+
+      card.innerHTML = `
+        <img src="${mentor.avatar}" alt="${mentor.name}" class="mentor-avatar" />
+        <div class="mentor-name">${mentor.name}</div>
+        <div class="mentor-rating">⭐ ${mentor.rating}</div>
+        <div class="mentor-subjects">
+          ${mentor.subjects.map(subject => `<span class="subject-tag">${subject}</span>`).join('')}
+        </div>
+        <button class="request-btn" onclick="requestSession('${mentor.name}')">Request Session</button>
+      `;
+
+      mentorsGrid.appendChild(card);
+    });
+
+    function requestSession(name) {
+      alert(`Redirecting to session request form for ${name}...`);
+      // You can redirect to your session form page here
+      // window.location.href = `/session-request.html?mentor=${encodeURIComponent(name)}`;
+    }
+  </script>
+
+</body>
+</html>
